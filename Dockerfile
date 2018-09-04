@@ -9,7 +9,8 @@ ENV DEBCONF_NONINTERACTIVE_SEEN true
 RUN echo "Europe/Berlin" > /etc/timezone
 
 RUN apt-get update && apt-get install -y -o Acquire::Retries=10 --no-install-recommends \
-    wget
+    wget \
+    git
 
 RUN mkdir -p /installation/ && \
     wget https://github.com/jgm/pandoc/releases/download/2.2.3.2/pandoc-2.2.3.2-1-amd64.deb \
